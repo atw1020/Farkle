@@ -10,6 +10,7 @@
 #include "stats.h"
 
 int AI::IDCounter = 1;
+/*
 std::array<std::map<int, double>, 6> lookupTables = {
         scorePMFTable(1),
         scorePMFTable(2),
@@ -18,6 +19,7 @@ std::array<std::map<int, double>, 6> lookupTables = {
         scorePMFTable(5),
         scorePMFTable(6)
 };
+ */
 
 //
 // constructors
@@ -84,8 +86,10 @@ std::vector<int> AI::chooseDice(std::vector<int> *dice, int storedScore){
 
         case HARD:
             moves = expectedValueChoose(dice, storedScore);
+            break;
         case FIRST_TURN:
             moves = break500(dice, storedScore);
+            break;
     }
 
     return moves;
@@ -154,6 +158,7 @@ std::vector<int> AI::break500(std::vector<int>* dice, int storedScore){
     std::vector<std::vector<int>> legalMoves = getLegalMoves(dice);
 
     std::vector<int> chosenDice;
+    std::map<int, double> temp;
 
     // first thing is first, if we are already at or above 500, return all the dice
     if (scoreRoll(dice) + storedScore >= 500){
@@ -167,12 +172,13 @@ std::vector<int> AI::break500(std::vector<int>* dice, int storedScore){
     double odds;
 
     // go through all the possible combinations of dice
-    /*
+
     for (auto move : legalMoves){
 
         numDice = numDice - move.size();
 
-        std::map<int, double> temp = lookupTables[numDice - 1];
+        // temp = lookupTables[numDice - 1];
+        temp = scorePMFTable(numDice);
 
         odds = 1 - scoreCMF(500 - currentScore - scoreRoll(&move), &temp);
 
@@ -188,7 +194,6 @@ std::vector<int> AI::break500(std::vector<int>* dice, int storedScore){
         }
     }
 
-     */
     return chosenDice;
 
 }

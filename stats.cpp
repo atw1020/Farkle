@@ -198,7 +198,7 @@ void testBreak500(){
 
     double breakRate;
 
-    int lastScore;
+    int lastScore = 0;
 
     for (int i = 0; i < NUM_REPS; i++){
         lastScore = test.takeTurn(control);

@@ -38,7 +38,7 @@ private:
             397.742
     };
 
-    static const std::array<std::map<int, double>, 6> lookupTables;
+    // static const std::array<std::map<int, double>, 6> lookupTables;
 
     static int IDCounter;
 
