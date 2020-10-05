@@ -44,7 +44,7 @@ private:
 
     double expectedValue(int numDice, int currentScore);
 
-    std::vector<int> break500(std::vector<int> *dice, int storedScore);
+    std::vector<int> break500(std::vector<int>* dice, int storedScore);
     std::vector<int> expectedValueChoose(std::vector<int> * dice, int storedScore);
 
     Difficulty difficulty;

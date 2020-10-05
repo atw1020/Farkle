@@ -167,7 +167,7 @@ std::vector<int> AI::break500(std::vector<int>* dice, int storedScore){
     double odds;
 
     // go through all the possible combinations of dice
-
+    /*
     for (auto move : legalMoves){
 
         numDice = numDice - move.size();
@@ -188,6 +188,7 @@ std::vector<int> AI::break500(std::vector<int>* dice, int storedScore){
         }
     }
 
+     */
     return chosenDice;
 
 }

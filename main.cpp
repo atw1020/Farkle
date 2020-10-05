@@ -92,7 +92,7 @@ int main() {
     });
      */
 
-    /*
+
     Game game({
         new Player("Arthur"),
         new AI(HARD),
@@ -102,9 +102,9 @@ int main() {
 
     //Game game({"Arthur", "Lucas"});
     game.play();
-     */
 
-    testBreak500();
+
+    // testBreak500();
 
     return 0;
 }
