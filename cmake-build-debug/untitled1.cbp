@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="untitled1"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/arthur/CLionProjects/Farkle Calculator/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/arthur/CLionProjects/Farkle Calculator/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/arthur/CLionProjects/Farkle Calculator/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="untitled1">
+				<Option output="/Users/arthur/CLionProjects/Farkle Calculator/cmake-build-debug/untitled1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/arthur/CLionProjects/Farkle Calculator/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled1"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="untitled1/fast">
+				<Option output="/Users/arthur/CLionProjects/Farkle Calculator/cmake-build-debug/untitled1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/arthur/CLionProjects/Farkle Calculator/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Frameworks/Python.framework/Versions/3.7/include/python3.7m"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 untitled1/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/arthur/CLionProjects/Farkle\ Calculator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/AI.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/AI.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/Game.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/Game.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/IO.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/IO.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/Player.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/Player.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/die.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/die.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/main.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/scorer.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/scorer.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/stats.cpp">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/stats.h">
+			<Option target="untitled1"/>
+		</Unit>
+		<Unit filename="/Users/arthur/CLionProjects/Farkle Calculator/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

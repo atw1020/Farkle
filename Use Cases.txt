@@ -1,0 +1,67 @@
+Use Case: Play a Game between a Human and an AI
+
+Scope: Command line Game
+
+Primary Actor: AI
+
+Stakeholders and Interests:
+
+    a) Player
+        1) Roll Desired Number of Dice
+        2) View Possible selections of dice to keep
+        3) Select Dice which the player wishes to Keep
+        4) Keep Rolling Die Until the player stops or farkles
+    b) AI
+        1) Roll Desired Number of Dice
+        2) Consider Possible selections of dice to keep
+        3) Select the best dice to keep
+        4) Keep Rolling Die until the AI stops or farkles
+
+Preconditions
+    1. a game has been created
+
+Postconditions
+    1. a player has won
+
+Main Success Scenario
+
+    1. The Player and the AI take turns rolling Dice
+    2. once a player scores over 500, scores are accumulated
+    3. Some player reaches 10,000 points
+    4. The other player rolls again
+    5. The highest score wins
+
+Extensions:
+
+-----------------------------------------------------------------------------------------------
+Use Case: Have an AI Play a game with real dice
+
+Scope: Real Life Farkle game
+
+Primary Actor: AI
+
+Stakeholders and Interests
+
+    a) player
+        1) Input Whatever they roll
+        2) Get a meaningful list of dice to keep
+    b) AI
+        1) Make the Optimal Play
+
+Preconditions:
+    1. The Dice have been rolled irl
+
+PostConditions:
+    1. the AI has posted a list of dice to keep
+
+Main Success Scenario
+    1. A Player Inputs the Dice that the AI Rolled
+    2. The AI Computes the best set of dice to keep
+    3. The AI Shares the dice they wish to keep with the player
+    4. The process repeats until the AI farkles or decides to stop
+
+Nouns:
+Player
+AI
+Dice
+
