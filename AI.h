@@ -11,7 +11,7 @@
 #include <map>
 #include "stats.h"
 
-enum Difficulty {EASY, MEDIUM, HARD, BRUTAL};
+enum Difficulty {EASY, MEDIUM, HARD, BRUTAL, FIRST_TURN};
 
 class AI : public Player{
 public:

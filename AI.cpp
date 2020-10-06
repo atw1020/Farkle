@@ -77,6 +77,11 @@ std::vector<int> AI::chooseDice(std::vector<int> *dice, int storedScore){
             }
 
             break;
+        case FIRST_TURN:
+
+            moves = break500(dice, storedScore);
+
+            break;
     }
 
     return moves;
