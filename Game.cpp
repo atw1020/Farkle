@@ -124,6 +124,8 @@ void Game::play() {
 
     std::cout << winner->getName() << " has won the game!" << std::endl;
 
+    std::cout << "the game lasted " << i / players.size() << " turns" << std::endl;
+
 }
 
 /**

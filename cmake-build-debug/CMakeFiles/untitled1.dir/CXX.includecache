@@ -6,27 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/arthur/CLionProjects/Farkle Calculator/AI.cpp
-climits
+/Users/arthur/CLionProjects/Farkle Calculator/Game.cpp
+iostream
 -
-AI.h
-/Users/arthur/CLionProjects/Farkle Calculator/AI.h
-scorer.h
-/Users/arthur/CLionProjects/Farkle Calculator/scorer.h
+Game.h
+/Users/arthur/CLionProjects/Farkle Calculator/Game.h
 IO.h
 /Users/arthur/CLionProjects/Farkle Calculator/IO.h
-cfloat
--
-
-/Users/arthur/CLionProjects/Farkle Calculator/AI.h
-array
--
-Player.h
-/Users/arthur/CLionProjects/Farkle Calculator/Player.h
-map
--
-stats.h
-/Users/arthur/CLionProjects/Farkle Calculator/stats.h
+scorer.h
+/Users/arthur/CLionProjects/Farkle Calculator/scorer.h
 
 /Users/arthur/CLionProjects/Farkle Calculator/Game.h
 vector
@@ -56,45 +44,5 @@ string
 vector
 -
 
-/Users/arthur/CLionProjects/Farkle Calculator/main.cpp
-iostream
--
-vector
--
-scorer.h
 /Users/arthur/CLionProjects/Farkle Calculator/scorer.h
-IO.h
-/Users/arthur/CLionProjects/Farkle Calculator/IO.h
-Player.h
-/Users/arthur/CLionProjects/Farkle Calculator/Player.h
-Game.h
-/Users/arthur/CLionProjects/Farkle Calculator/Game.h
-AI.h
-/Users/arthur/CLionProjects/Farkle Calculator/AI.h
-stats.h
-/Users/arthur/CLionProjects/Farkle Calculator/stats.h
-
-/Users/arthur/CLionProjects/Farkle Calculator/scorer.h
-
-/Users/arthur/CLionProjects/Farkle Calculator/stats.cpp
-stats.h
-/Users/arthur/CLionProjects/Farkle Calculator/stats.h
-vector
--
-array
--
-iostream
--
-die.h
-/Users/arthur/CLionProjects/Farkle Calculator/die.h
-scorer.h
-/Users/arthur/CLionProjects/Farkle Calculator/scorer.h
-Game.h
-/Users/arthur/CLionProjects/Farkle Calculator/Game.h
-AI.h
-/Users/arthur/CLionProjects/Farkle Calculator/AI.h
-
-/Users/arthur/CLionProjects/Farkle Calculator/stats.h
-map
--
 

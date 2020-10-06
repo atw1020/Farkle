@@ -8,3 +8,11 @@ Farkle is Dice based game in which
 
 # Usage
 
+# AI data
+
+Average Score per Roll
+
+- Hard/Brutal AI: 485 Points
+- Medium AI: 388 Points
+- Easy AI: 317 Points
+
