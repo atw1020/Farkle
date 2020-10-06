@@ -52,35 +52,21 @@ std::vector<int> AI::chooseDice(std::vector<int> *dice, int storedScore){
         printRollStatus(dice, storedScore);
     }
 
-    std::vector<std::vector<int>> legalMoves = getLegalMoves(dice);
     std::vector<int> moves;
+
+    // every AI, even the easy one should use the break 500 algorithm to get on the board ASAP
+    if (score < 500){
+        return break500(dice, storedScore);
+    }
 
     switch(difficulty){
         case MEDIUM:
-
             // just always take the dice you get on your first roll
             moves = *dice;
             break;
 
         case EASY:
-
-            // make random moves
-            for (auto legalMove : legalMoves) {
-
-                // condition for keeping the moves
-                if (random() % 2 == 0){
-                    // choose this move
-                    for (auto dice : legalMove){
-                        moves.push_back(dice);
-                    }
-                }
-            }
-
-            // if we didn't select any moves, stop at this point
-            if (moves.size() == 0){
-                moves = *dice;
-            }
-
+            moves = randomMove(dice, storedScore);
             break;
 
         case HARD:
@@ -201,59 +187,39 @@ std::vector<int> AI::break500(std::vector<int> *dice, int storedScore) {
 
 }
 
-
 /**
  *
- * returns the choice of dice that has the highest odds of breaking 500
+ * makes a random move
  *
- * @param dice the dice to score
- * @param storedScore the score that we have in the bank
- * @return the move that has the highest odds of breaking 500
+ * @param dice dice to make a random move
+ * @param storedScore
+ * @return
  */
- /*
-std::vector<int> AI::break500(std::vector<int>* dice, int storedScore){
+std::vector<int> AI::randomMove(std::vector<int> *dice, int storedScore){
 
     std::vector<std::vector<int>> legalMoves = getLegalMoves(dice);
+    std::vector<int> moves;
 
-    std::vector<int> chosenDice;
-    std::array<double, NUM_SCORES> temp{};
+    // make random moves
+    for (auto legalMove : legalMoves) {
 
-    // first thing is first, if we are already at or above 500, return all the dice
-    if (scoreRoll(dice) + storedScore >= 500){
-        return *dice;
-    }
-
-    int numDice = dice->size();
-    int currentScore = storedScore;
-
-    double bestOdds = 0;
-    double odds;
-
-    // go through all the possible combinations of dice
-
-    for (int i = 0; i < legalMoves.size(); i++){
-
-        // temp = lookupTables[numDice - 1];
-        temp = scorePMF(numDice - legalMoves[i].size());
-
-        odds = 1 - scoreCMF(500 - currentScore - scoreRoll(&legalMoves[i]), &temp);
-
-        if (odds > bestOdds){
-            numDice -= legalMoves[i].size();
-            bestOdds = odds;
-
-            // add the dice
-
-            for (auto die : legalMoves[i]){
-                chosenDice.push_back(die);
+        // condition for keeping the moves
+        if (random() % 2 == 0){
+            // choose this move
+            for (auto dice : legalMove){
+                moves.push_back(dice);
             }
         }
     }
 
-    return chosenDice;
+    // if we didn't select any moves, stop at this point
+    if (moves.size() == 0){
+        moves = *dice;
+    }
+
+    return moves;
 
 }
-  */
 
 /**
  *

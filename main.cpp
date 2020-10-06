@@ -92,7 +92,7 @@ int main() {
     });
      */
 
-    /*
+
     Game game({
         new Player("Arthur"),
         new AI(HARD),
@@ -102,20 +102,7 @@ int main() {
 
     //Game game({"Arthur", "Lucas"});
     game.play();
-    */
 
-    /*
-    AI bot(FIRST_TURN, true);
-
-    int storedScore = 50;
-    std::vector<int> dice = {5, 5, 2, 3, 3};
-
-    std::vector<int> chosen = bot.chooseDice(&dice, storedScore);
-
-    std::cout << rollString(&chosen) << std::endl;
-     */
-
-    testBreak500();
 
     return 0;
 }

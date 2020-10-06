@@ -50,6 +50,8 @@ private:
     std::vector<int> expectedValueChoose(std::vector<int> * dice, int storedScore);
 
     Difficulty difficulty;
+
+    std::vector<int> randomMove(std::vector<int> *dice, int storedScore);
 };
 
 
