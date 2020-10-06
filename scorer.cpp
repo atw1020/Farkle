@@ -26,8 +26,6 @@ int scoreRoll(std::vector<int>* dice){
         rollCounts[(*dice)[i] - 1]++;
     }
 
-
-
     bool straight = true;
 
     int triplets = 0;

@@ -7,19 +7,18 @@
 #include "scorer.h"
 #include "IO.h"
 #include <cfloat>
-#include "stats.h"
 
 int AI::IDCounter = 1;
-/*
-std::array<std::map<int, double>, 6> lookupTables = {
-        scorePMFTable(1),
-        scorePMFTable(2),
-        scorePMFTable(3),
-        scorePMFTable(4),
-        scorePMFTable(5),
-        scorePMFTable(6)
+
+const std::array<std::array<double, NUM_SCORES>, 6> AI::lookupTables = {
+        scorePMF(1),
+        scorePMF(2),
+        scorePMF(3),
+        scorePMF(4),
+        scorePMF(5),
+        scorePMF(6)
 };
- */
+
 
 //
 // constructors
@@ -153,6 +152,65 @@ std::vector<int> AI::expectedValueChoose(std::vector<int> *dice, int storedScore
  * @param storedScore the score that we have in the bank
  * @return the move that has the highest odds of breaking 500
  */
+std::vector<int> AI::break500(std::vector<int> *dice, int storedScore) {
+
+    // first of all, if we have scored over 500 points, stop
+    if (scoreRoll(dice) + storedScore >= 500){
+        return *dice;
+    }
+
+    // create the kept rolls vector
+    std::vector<int> keptRolls;
+
+    // temporary variables
+
+    std::vector<std::vector<int>> moves = getLegalMoves(dice);
+
+    double odds;
+    double bestOdds = 0;
+
+    int numDice = dice->size();
+
+    // go through all the moves
+    for (auto move : moves){
+
+        // compute the odds of breaking 500
+        odds = 1 - scoreCMF(500 - scoreRoll(&move) - storedScore,
+                            &(lookupTables[numDice - move.size()]));
+
+        // check if we got something better than our best odds
+        if (odds > bestOdds){
+            bestOdds = odds;
+            numDice -= move.size();
+
+            // push all of the dice we used into the vector
+            for (auto dice : move){
+                keptRolls.push_back(dice);
+            }
+
+        }
+
+    }
+
+    // if we can't break 500, give up and save ourselves some time
+    if (bestOdds == 0){
+        return *dice;
+    }
+
+    return keptRolls;
+
+}
+
+
+/**
+ *
+ * returns the choice of dice that has the highest odds of breaking 500
+ *
+ * @param dice the dice to score
+ * @param storedScore the score that we have in the bank
+ * @return the move that has the highest odds of breaking 500
+ */
+ /*
 std::vector<int> AI::break500(std::vector<int>* dice, int storedScore){
 
     std::vector<std::vector<int>> legalMoves = getLegalMoves(dice);
@@ -195,6 +253,7 @@ std::vector<int> AI::break500(std::vector<int>* dice, int storedScore){
     return chosenDice;
 
 }
+  */
 
 /**
  *

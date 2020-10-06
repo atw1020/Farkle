@@ -104,14 +104,18 @@ int main() {
     game.play();
     */
 
-    std::array<double, NUM_SCORES> temp;
+    /*
+    AI bot(FIRST_TURN, true);
 
-    for (int i = 0; i < 1000; i++){
-        temp = scorePMF(i % 6);
-        scoreCMF(500, &temp);
-    }
+    int storedScore = 50;
+    std::vector<int> dice = {5, 5, 2, 3, 3};
 
-    // testBreak500();
+    std::vector<int> chosen = bot.chooseDice(&dice, storedScore);
+
+    std::cout << rollString(&chosen) << std::endl;
+     */
+
+    testBreak500();
 
     return 0;
 }

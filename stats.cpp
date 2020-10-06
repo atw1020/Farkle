@@ -11,7 +11,7 @@
 #include "Game.h"
 #include "AI.h"
 
-#define NUM_REPS 10
+#define NUM_REPS 100000
 
 /**
  *
@@ -43,7 +43,7 @@ void nextRoll(std::vector<int>* rolls){
  * @param table table to look up the result in
  * @return Cumulative Probability Mass function of the score up to value (inclusive)
  */
-double scoreCMF(int value, std::array<double, NUM_SCORES>* table){
+double scoreCMF(int value, const std::array<double, NUM_SCORES>* table){
 
     double acc;
 
@@ -67,8 +67,12 @@ double scoreCMF(int value, std::array<double, NUM_SCORES>* table){
  */
 std::array<double, NUM_SCORES> scorePMF(int numDice){
 
-    std::array<double, NUM_SCORES> PMF{};
-    std::vector<int> dice = std::vector<int>(1);
+    std::array<double, NUM_SCORES> PMF;
+    std::vector<int> dice = std::vector<int>(numDice, 1);
+
+    if (dice.size() > 1){
+        assert(dice[1] == 1);
+    }
 
     int score;
     int combos = pow(6, numDice);

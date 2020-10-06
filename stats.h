@@ -10,7 +10,7 @@
 
 
 std::array<double, NUM_SCORES> scorePMF(int numDice);
-double scoreCMF(int value, std::array<double, NUM_SCORES> *table);
+double scoreCMF(int value, const std::array<double, NUM_SCORES> *table);
 void testBreak500();
 
 #endif //FARKLE_STATS_H

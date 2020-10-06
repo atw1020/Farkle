@@ -2,12 +2,14 @@
 // Created by arthur wesley on 9/21/20.
 //
 
-#include <array>
-#include "Player.h"
-#include <map>
 
 #ifndef UNTITLED1_AI_H
 #define UNTITLED1_AI_H
+
+#include <array>
+#include "Player.h"
+#include <map>
+#include "stats.h"
 
 enum Difficulty {EASY, MEDIUM, HARD, FIRST_TURN};
 
@@ -38,7 +40,7 @@ private:
             397.742
     };
 
-    // static const std::array<std::map<int, double>, 6> lookupTables;
+    static const std::array<std::array<double, NUM_SCORES>, 6> lookupTables;
 
     static int IDCounter;
 

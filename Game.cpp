@@ -193,10 +193,6 @@ int Game::takeTurn(Player* player) {
         // if the selected dice include all of the dice listed, we are not still going
         stillGoing = !isEqual(chosenDice, rolls);
 
-        // re-initialize rolls
-        rolls = std::vector<int>();
-
-
     } while (stillGoing);
 
     player->scorePoints(scoredPoints);
