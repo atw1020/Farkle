@@ -6,10 +6,11 @@
 #define FARKLE_STATS_H
 
 #include <map>
+#define NUM_SCORES 3000 / 50
 
 
-std::map<int, double> scorePMFTable(int numDice);
-double scoreCMF(int value, std::map<int, double> *table);
+std::array<double, NUM_SCORES> scorePMF(int numDice);
+double scoreCMF(int value, std::array<double, NUM_SCORES> *table);
 void testBreak500();
 
 #endif //FARKLE_STATS_H

@@ -92,7 +92,7 @@ int main() {
     });
      */
 
-
+    /*
     Game game({
         new Player("Arthur"),
         new AI(HARD),
@@ -102,7 +102,14 @@ int main() {
 
     //Game game({"Arthur", "Lucas"});
     game.play();
+    */
 
+    std::array<double, NUM_SCORES> temp;
+
+    for (int i = 0; i < 1000; i++){
+        temp = scorePMF(i % 6);
+        scoreCMF(500, &temp);
+    }
 
     // testBreak500();
 

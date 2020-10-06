@@ -158,7 +158,7 @@ std::vector<int> AI::break500(std::vector<int>* dice, int storedScore){
     std::vector<std::vector<int>> legalMoves = getLegalMoves(dice);
 
     std::vector<int> chosenDice;
-    std::map<int, double> temp;
+    std::array<double, NUM_SCORES> temp{};
 
     // first thing is first, if we are already at or above 500, return all the dice
     if (scoreRoll(dice) + storedScore >= 500){
@@ -173,22 +173,20 @@ std::vector<int> AI::break500(std::vector<int>* dice, int storedScore){
 
     // go through all the possible combinations of dice
 
-    for (auto move : legalMoves){
-
-        numDice = numDice - move.size();
+    for (int i = 0; i < legalMoves.size(); i++){
 
         // temp = lookupTables[numDice - 1];
-        temp = scorePMFTable(numDice);
+        temp = scorePMF(numDice - legalMoves[i].size());
 
-        odds = 1 - scoreCMF(500 - currentScore - scoreRoll(&move), &temp);
+        odds = 1 - scoreCMF(500 - currentScore - scoreRoll(&legalMoves[i]), &temp);
 
         if (odds > bestOdds){
-            numDice -= move.size();
+            numDice -= legalMoves[i].size();
             bestOdds = odds;
 
             // add the dice
 
-            for (auto die : *dice){
+            for (auto die : legalMoves[i]){
                 chosenDice.push_back(die);
             }
         }

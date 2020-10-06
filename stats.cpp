@@ -11,7 +11,7 @@
 #include "Game.h"
 #include "AI.h"
 
-#define NUM_REPS 10000
+#define NUM_REPS 10
 
 /**
  *
@@ -37,58 +37,62 @@ void nextRoll(std::vector<int>* rolls){
 
 /**
  *
- * probability mass function of the score
+ * cumulative mass function of the score
  *
  * @param value value to evaluate the PMF at
  * @param table table to look up the result in
  * @return Cumulative Probability Mass function of the score up to value (inclusive)
  */
-double scoreCMF(int value, std::map<int, double>* table){
+double scoreCMF(int value, std::array<double, NUM_SCORES>* table){
 
-    double accumulator;
+    double acc;
 
-    for (auto entry : *table){
-        if (entry.first <= value){
-            accumulator += entry.second;
-        }
+    assert(value % 50 == 0);
+
+    // loop through the table until you reach scores higher than the indicated value
+    for (int i = 0; i <= value / 50; i++){
+        acc += (*table)[i];
     }
 
-    return accumulator;
+    return acc;
 
 }
 
-std::map<int, double> scorePMFTable(int numDice){
+/**
+ *
+ * probability mass function of the score for the given number of dice
+ *
+ * @param numDice number of dice to get the PMF for
+ * @return a PMF table for that number of dice
+ */
+std::array<double, NUM_SCORES> scorePMF(int numDice){
 
-    std::map<int, double> table;
+    std::array<double, NUM_SCORES> PMF{};
+    std::vector<int> dice = std::vector<int>(1);
 
     int score;
+    int combos = pow(6, numDice);
 
-    // initialize the dice
-    std::vector<int> dice(numDice, 1);
+    // go through all the possible rolls
+    for (int i = 0; i < combos; i++){
 
-    // go through all the dice combonations
-    for (int i = 0; i < pow(6, numDice); i++){
-
+        // score the roll
         score = scoreRoll(&dice);
 
-        // increment the count of this score
-        if (table.find(score) != table.end()){
-            table[score]++;
-        }
-        else{
-            table[score] = 1;
-        }
+        // increment the entry in the table
+        PMF[score / 50]++;
 
         // get the next roll
         nextRoll(&dice);
+
+    }
+    // convert the counts to odds by dividing by
+
+    for (int i = 0; i < NUM_SCORES; i++){
+        PMF[i] /= combos;
     }
 
-
-    for (std::pair<int, double> entry : table){
-        table[entry.first] = entry.second / pow(6, numDice);
-    }
-
-    return table;
+    return PMF;
 
 }
 
@@ -188,17 +192,17 @@ void scoreRandomRolls(){
 
 void testBreak500(){
 
-    Player* control = new AI(HARD);
-    Player* treatment = new AI(FIRST_TURN);
+    Player* control = new AI(HARD, true);
+    Player* treatment = new AI(FIRST_TURN, true);
 
     Game test({
         control,
         treatment
-    });
+    }, true);
 
     double breakRate;
 
-    int lastScore = 0;
+    int lastScore;
 
     for (int i = 0; i < NUM_REPS; i++){
         lastScore = test.takeTurn(control);
@@ -208,10 +212,10 @@ void testBreak500(){
         }
     }
 
-    breakRate = 0;
-
     std::cout << "the control AI broke 500 " <<
-                breakRate / NUM_REPS << "% of the time\n";
+                breakRate * 100 / NUM_REPS << "% of the time\n";
+
+    breakRate = 0;
 
     for (int i = 0; i < NUM_REPS; i++){
         lastScore = test.takeTurn(treatment);
@@ -222,6 +226,6 @@ void testBreak500(){
     }
 
     std::cout << "the test AI broke 500 " <<
-              breakRate / NUM_REPS << "% of the time\n";
+              breakRate * 100 / NUM_REPS << "% of the time\n";
 
 }
