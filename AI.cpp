@@ -54,11 +54,6 @@ std::vector<int> AI::chooseDice(std::vector<int> *dice, int storedScore){
 
     std::vector<int> moves;
 
-    // every AI, even the easy one should use the break 500 algorithm to get on the board ASAP
-    if (score < 500){
-        return break500(dice, storedScore);
-    }
-
     switch(difficulty){
         case MEDIUM:
             // just always take the dice you get on your first roll
@@ -72,8 +67,15 @@ std::vector<int> AI::chooseDice(std::vector<int> *dice, int storedScore){
         case HARD:
             moves = expectedValueChoose(dice, storedScore);
             break;
-        case FIRST_TURN:
-            moves = break500(dice, storedScore);
+        case BRUTAL:
+
+            if (score < 500){
+                moves = break500(dice, storedScore);
+            }
+            else{
+                moves = expectedValueChoose(dice, storedScore);
+            }
+
             break;
     }
 

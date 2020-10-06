@@ -95,6 +95,7 @@ int main() {
 
     Game game({
         new Player("Arthur"),
+        new AI(BRUTAL),
         new AI(HARD),
         new AI(MEDIUM),
         new AI(EASY)
