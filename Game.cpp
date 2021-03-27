@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <utility>
 #include "Game.h"
 #include "IO.h"
 #include "scorer.h"
@@ -13,6 +14,8 @@
 // constructors / destructors
 //
 
+using namespace std;
+
 /**
  *
  * constructor
@@ -22,7 +25,7 @@
 Game::Game(std::vector<std::string> names) {
 
     for (auto name : names){
-        players.push_back(new Player(name));
+        players.push_back(make_shared<Player>(name));
     }
 
 }
@@ -33,8 +36,8 @@ Game::Game(std::vector<std::string> names) {
  *
  * @param players names of the players
  */
-Game::Game(std::vector<Player*> players) {
-    this->players = players;
+Game::Game(std::vector<shared_ptr<Player>> players) {
+    this->players = std::move(players);
     silent = false;
 }
 
@@ -45,23 +48,9 @@ Game::Game(std::vector<Player*> players) {
  * @param players list of the players
  * @param silent whether or not the game is silent
  */
-Game::Game(std::vector<Player *> players, bool silent) {
-    this->players = players;
+Game::Game(std::vector<shared_ptr<Player>> players, bool silent) {
+    this->players = std::move(players);
     this->silent = silent;
-}
-
-/**
- *
- * destructor
- *
- * main point of this is to free the player pointers
- *
- */
-Game::~Game() {
-    for (auto player : players){
-        free(player);
-        player = NULL;
-    }
 }
 
 //
@@ -104,14 +93,14 @@ void Game::play() {
         takeTurn(players[i % players.size()]);
     }
 
-    Player* winner;
+    shared_ptr<Player> winner;
 
     int highScore = 0;
 
     printStdBreak();
 
     // print the scores
-    for (auto player : players){
+    for (const auto& player : players){
         std::cout << player->status() << std::endl;
 
         if (player->getScore() >= highScore){
@@ -134,7 +123,7 @@ void Game::play() {
  *
  * @param player
  */
-int Game::takeTurn(Player* player) {
+int Game::takeTurn(const shared_ptr<Player>& player) {
 
     // declare variables
     bool stillGoing;

@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/arthur/CLionProjects/Farkle Calculator/Game.cpp
-iostream
+/Users/arthur/CLionProjects/Farkle Calculator/AI.h
+array
 -
-Game.h
-/Users/arthur/CLionProjects/Farkle Calculator/Game.h
-IO.h
-/Users/arthur/CLionProjects/Farkle Calculator/IO.h
-scorer.h
-/Users/arthur/CLionProjects/Farkle Calculator/scorer.h
+Player.h
+/Users/arthur/CLionProjects/Farkle Calculator/Player.h
+map
+-
+stats.h
+/Users/arthur/CLionProjects/Farkle Calculator/stats.h
 
 /Users/arthur/CLionProjects/Farkle Calculator/Game.h
 vector
@@ -44,5 +44,27 @@ string
 vector
 -
 
+/Users/arthur/CLionProjects/Farkle Calculator/main.cpp
+iostream
+-
+vector
+-
+scorer.h
 /Users/arthur/CLionProjects/Farkle Calculator/scorer.h
+IO.h
+/Users/arthur/CLionProjects/Farkle Calculator/IO.h
+Player.h
+/Users/arthur/CLionProjects/Farkle Calculator/Player.h
+Game.h
+/Users/arthur/CLionProjects/Farkle Calculator/Game.h
+AI.h
+/Users/arthur/CLionProjects/Farkle Calculator/AI.h
+stats.h
+/Users/arthur/CLionProjects/Farkle Calculator/stats.h
+
+/Users/arthur/CLionProjects/Farkle Calculator/scorer.h
+
+/Users/arthur/CLionProjects/Farkle Calculator/stats.h
+map
+-
 

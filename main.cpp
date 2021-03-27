@@ -94,16 +94,14 @@ int main() {
 
 
     Game game({
-        new Player("Arthur"),
-        new AI(BRUTAL),
-        new AI(HARD),
-        new AI(MEDIUM),
-        new AI(EASY)
+        std::make_unique<AI>(BRUTAL),
+        std::make_unique<AI>(EASY),
+        // new Player("Mom"),
+        std::make_unique<Player>("Arthur")
     });
 
     //Game game({"Arthur", "Lucas"});
     game.play();
-
 
     return 0;
 }

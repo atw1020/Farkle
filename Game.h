@@ -9,23 +9,22 @@
 #include "Player.h"
 #include <string>
 #include "die.h"
+#include <memory>
 
 class Game {
 public:
     Game(std::vector<std::string> names);
-    Game(std::vector<Player*> players);
-    Game(std::vector<Player*> players, bool silent);
+    Game(std::vector<std::shared_ptr<Player>> players);
+    Game(std::vector<std::shared_ptr<Player>> players, bool silent);
 
-    ~Game();
-
-    int takeTurn(Player* player);
+    int takeTurn(const std::shared_ptr<Player>& player);
 
     void play();
 private:
 
     die dice;
 
-    std::vector<Player*> players;
+    std::vector<std::shared_ptr<Player>> players;
 
     bool hasWinner();
     bool silent = false;
